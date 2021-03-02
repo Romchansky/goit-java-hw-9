@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 
 public class ValidatePhoneNumber {
 
-    private static String ABSOLUTE_PATH = "C:\\Users\\romka\\IdeaProjects\\goit-java-hw-9\\src\\main\\resources\\file.txt";
-    private static String VALIDATE_ONE = "\\d{3}-\\d{3}-\\d{4}";
-    private static String VALIDATE_TWO = "\\(\\d{3}\\) \\d{3}-\\d{4}";
+    private static final String ABSOLUTE_PATH = "src\\main\\resources\\file.txt";
+    private static final String VALIDATE_ONE = "\\d{3}-\\d{3}-\\d{4}";
+    private static final String VALIDATE_TWO = "\\(\\d{3}\\) \\d{3}-\\d{4}";
 
     public static void main(String[] args) {
         File file = new File(ABSOLUTE_PATH);
@@ -31,10 +31,7 @@ public class ValidatePhoneNumber {
     }
 
     private static boolean isCorrectlyNumber(String number) {
-        boolean validateOne = Pattern.matches(VALIDATE_ONE, number);
-        boolean validateTwo = Pattern.matches(VALIDATE_TWO, number);
-
-        return validateOne || validateTwo;
+        return Pattern.matches(VALIDATE_ONE, number) || Pattern.matches(VALIDATE_TWO, number);
     }
 
     private static void checkIfFileAvailable(File file) {

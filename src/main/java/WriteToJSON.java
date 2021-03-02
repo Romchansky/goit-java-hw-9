@@ -7,8 +7,8 @@ import java.util.List;
 
 public class WriteToJSON {
 
-    private static String ABSOLUTE_PATH = "C:\\Users\\romka\\IdeaProjects\\goit-java-hw-9\\src\\main\\resources\\fileGson.txt";
-    private static String ABSOLUTE_PATH_TO_JSON = "C:\\Users\\romka\\IdeaProjects\\goit-java-hw-9\\src\\main\\resources\\fileToJson.json";
+    private static final String ABSOLUTE_PATH = "src\\main\\resources\\fileGson.txt";
+    private static final String ABSOLUTE_PATH_TO_JSON = "src\\main\\resources\\fileToJson.json";
 
     public static void main(String[] args) {
 
@@ -33,7 +33,7 @@ public class WriteToJSON {
         }
     }
 
-    private static List<User> createUser(File fileGson, List<User> users) {
+    private static void createUser(File fileGson, List<User> users) {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileGson))) {
             String line = reader.readLine();
             while (line != null) {
@@ -46,7 +46,6 @@ public class WriteToJSON {
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
-        return users;
     }
 
     private static void checkIfFileAvailable(File file) {

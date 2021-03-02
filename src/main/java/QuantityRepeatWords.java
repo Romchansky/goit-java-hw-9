@@ -7,7 +7,7 @@ import java.util.*;
 
 public class QuantityRepeatWords {
 
-    private static final String ABSOLUTE_PATH_WORDS = "C:\\Users\\romka\\IdeaProjects\\goit-java-hw-9\\src\\main\\resources\\words.txt";
+    private static final String ABSOLUTE_PATH_WORDS = "src\\main\\resources\\words.txt";
 
     public static void main(String[] args) {
         File file = new File(ABSOLUTE_PATH_WORDS);
@@ -39,11 +39,15 @@ public class QuantityRepeatWords {
     }
 
     private static void sortedAndUniqueWords(String[] line) {
-        List<String> list = Arrays.asList(line);
-        Set<String> uniqueWords = new HashSet<>(list);
-        for (String word : uniqueWords) {
-            System.out.println(word + ": " + Collections.frequency(list, word));
+
+        List<String> wordList = Arrays.asList(line);
+        Map<String, Integer> wordsMap = new HashMap<>();
+        for (String uniqueWord : wordList) {
+            wordsMap.put(uniqueWord, Collections.frequency(wordList, uniqueWord));
         }
+        wordsMap.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .forEach(System.out::println);
     }
 
     private static void checkIfFileAvailable(File file) {
