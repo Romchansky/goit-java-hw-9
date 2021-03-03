@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class ValidatePhoneNumber {
 
-    private static final String ABSOLUTE_PATH = "src\\main\\resources\\file.txt";
+    private static final String ABSOLUTE_PATH = "src/main/resources/file.txt";
     private static final String VALIDATE_ONE = "\\d{3}-\\d{3}-\\d{4}";
     private static final String VALIDATE_TWO = "\\(\\d{3}\\) \\d{3}-\\d{4}";
 

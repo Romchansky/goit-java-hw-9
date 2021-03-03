@@ -7,8 +7,8 @@ import java.util.List;
 
 public class WriteToJSON {
 
-    private static final String ABSOLUTE_PATH = "src\\main\\resources\\fileGson.txt";
-    private static final String ABSOLUTE_PATH_TO_JSON = "src\\main\\resources\\fileToJson.json";
+    private static final String ABSOLUTE_PATH = "src/main/resources/fileGson.txt";
+    private static final String ABSOLUTE_PATH_TO_JSON = "src/main/resources/fileToJson.json";
 
     public static void main(String[] args) {
 

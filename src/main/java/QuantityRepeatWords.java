@@ -7,7 +7,7 @@ import java.util.*;
 
 public class QuantityRepeatWords {
 
-    private static final String ABSOLUTE_PATH_WORDS = "src\\main\\resources\\words.txt";
+    private static final String ABSOLUTE_PATH_WORDS = "src/main/resources/words.txt";
 
     public static void main(String[] args) {
         File file = new File(ABSOLUTE_PATH_WORDS);
